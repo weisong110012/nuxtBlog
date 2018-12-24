@@ -2,7 +2,7 @@
   <div class="circle-list">
     <div class="circle-item" v-for="(item,index) in timeart" :key="index">
       <h3 class="title">
-        <nuxt-link to="/">{{item.title}}</nuxt-link>
+        <nuxt-link :to="{name:'article-artid',params:{artid:item.artid}}">{{item.title}}</nuxt-link>
       </h3>
       <div class="info cf">
         <div class="info-img">
