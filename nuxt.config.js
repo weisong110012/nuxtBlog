@@ -43,17 +43,23 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
-
+  axios: {
+    prefix: '/api/', proxy: true // Can be also an object with default options 
+  },
+  proxy: { '/api': { target: 'http://101.132.34.93:443', pathRewrite: { '^/api': '' }, changeOrigin: true } },
   /*
   ** Build configuration
   */
   build: {
+    vendor: ['axios'],
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }

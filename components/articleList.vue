@@ -1,109 +1,26 @@
 <template>
   <div class="circle-list">
-    <div class="circle-item">
+    <div class="circle-item" v-for="(item,index) in timeart" :key="index">
       <h3 class="title">
-        <nuxt-link to="/">博客开通了</nuxt-link>
+        <nuxt-link to="/">{{item.title}}</nuxt-link>
       </h3>
       <div class="info cf">
         <div class="info-img">
           <nuxt-link to="/">
-            <img src="~static/img/css3.jpg" alt>
+            <img :src="songsong+item.imgurl" alt>
           </nuxt-link>
         </div>
-        <div class="info-des">
-          帝国cms列表页图文展示，或者首页图文展示，
-          如果使用全图和文字，编辑起来比较麻烦，因为每一篇文章，
-          你都得花时间去配图，所以，可有使用以下方法来实现。
-        </div>
+        <div class="info-des">{{item.des}}</div>
       </div>
 
       <div class="circle-footer cf">
         <span class="time">
-          <span class="fa fa-clock-o"></span> 2018-06-07
+          <span class="fa fa-clock-o"></span>
+          {{item.time-0 | formatDate}}
         </span>
         <span class="renshu">
-          <span class="fa fa-thumbs-up"></span> 107
-        </span>
-        <nuxt-link to>阅读全文</nuxt-link>
-      </div>
-    </div>
-    <div class="circle-item">
-      <h3 class="title">
-        <nuxt-link to="/">博客开通了</nuxt-link>
-      </h3>
-      <div class="info cf">
-        <div class="info-img">
-          <nuxt-link to="/">
-            <img src="~static/img/css3.jpg" alt>
-          </nuxt-link>
-        </div>
-        <div class="info-des">
-          帝国cms列表页图文展示，或者首页图文展示，
-          如果使用全图和文字，编辑起来比较麻烦，因为每一篇文章，
-          你都得花时间去配图，所以，可有使用以下方法来实现。
-        </div>
-      </div>
-
-      <div class="circle-footer cf">
-        <span class="time">
-          <span class="fa fa-clock-o"></span> 2018-06-07
-        </span>
-        <span class="renshu">
-          <span class="fa fa-thumbs-up"></span> 107
-        </span>
-        <nuxt-link to>阅读全文</nuxt-link>
-      </div>
-    </div>
-     <div class="circle-item">
-      <h3 class="title">
-        <nuxt-link to="/">博客开通了</nuxt-link>
-      </h3>
-      <div class="info cf">
-        <div class="info-img">
-          <nuxt-link to="/">
-            <img src="~static/img/css3.jpg" alt>
-          </nuxt-link>
-        </div>
-        <div class="info-des">
-          帝国cms列表页图文展示，或者首页图文展示，
-          如果使用全图和文字，编辑起来比较麻烦，因为每一篇文章，
-          你都得花时间去配图，所以，可有使用以下方法来实现。
-        </div>
-      </div>
-
-      <div class="circle-footer cf">
-        <span class="time">
-          <span class="fa fa-clock-o"></span> 2018-06-07
-        </span>
-        <span class="renshu">
-          <span class="fa fa-thumbs-up"></span> 107
-        </span>
-        <nuxt-link to>阅读全文</nuxt-link>
-      </div>
-    </div>
-     <div class="circle-item">
-      <h3 class="title">
-        <nuxt-link to="/">博客开通了</nuxt-link>
-      </h3>
-      <div class="info cf">
-        <div class="info-img">
-          <nuxt-link to="/">
-            <img src="~static/img/css3.jpg" alt>
-          </nuxt-link>
-        </div>
-        <div class="info-des">
-          帝国cms列表页图文展示，或者首页图文展示，
-          如果使用全图和文字，编辑起来比较麻烦，因为每一篇文章，
-          你都得花时间去配图，所以，可有使用以下方法来实现。
-        </div>
-      </div>
-
-      <div class="circle-footer cf">
-        <span class="time">
-          <span class="fa fa-clock-o"></span> 2018-06-07
-        </span>
-        <span class="renshu">
-          <span class="fa fa-thumbs-up"></span> 107
+          <span class="fa fa-thumbs-up"></span>
+          {{item.zhan}}
         </span>
         <nuxt-link to>阅读全文</nuxt-link>
       </div>
@@ -112,7 +29,26 @@
 </template>
 
 <script>
-export default {};
+import { formatDate } from "../assets/common/date.js";
+export default {
+  filters: {
+    formatDate(time) {
+      var date = new Date(time);
+      return formatDate(date, "yyyy-MM-dd hh:mm");
+    }
+  },
+  props: {
+    timeart: {
+      type: Array
+    },
+    timeartType: {
+      type: Number
+    },
+    songsong: {
+      type: String
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
@@ -172,7 +108,7 @@ export default {};
       .renshu {
         float: left;
         .fa {
-          color: rgba(255, 0, 0,.4);
+          color: rgba(255, 0, 0, 0.4);
         }
       }
       a {

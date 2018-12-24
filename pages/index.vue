@@ -31,44 +31,30 @@
       <div class="content-top"></div>
       <div class="content">
         <div class="content-left">
-          <article-list/>
+          <article-list :timeart="homeData.timeart" :timeartType="2" :songsong="songsong"/>
         </div>
         <div class="content-right">
           <div class="tjwz">
             <h3 class="tjwz-title">推荐文章</h3>
             <ul class="text-lists">
-              <li>
-                <span class="Num">01</span>
-                <nuxt-link to class="title">博客开通了</nuxt-link>
-              </li>
-              <li>
-                <span class="Num">02</span>
-                <nuxt-link to class="title">博开通了</nuxt-link>
-              </li>
-              <li>
-                <span class="Num">03</span>
-                <nuxt-link to class="title">博客通了</nuxt-link>
-              </li>
-              <li>
-                <span class="Num">04</span>
-                <nuxt-link to class="title">博客开通了博客开通了</nuxt-link>
+              <li  v-for='(item,index) in homeData.hotart' :key="item.artid">
+                <span class="Num">{{index.toString()[1]?index.toString():0+(index+1).toString()}}</span>
+                <nuxt-link to class="title">{{item.title}}</nuxt-link>
               </li>
             </ul>
           </div>
           <div class="twtj">
             <h3 class="twtj-title">图文推荐</h3>
-             <ul class="Imgtext-lists">
-                        <li>
-                            <nuxt-link to="" class="title" >
-                              <div class="img">
-                                  <img src="~static/img/css3.jpg" alt="" >
-                              </div>
-                              <div class="title">
-                                博客开通了博客开通了
-                              </div>
-                          </nuxt-link>
-                        </li>
-                    </ul>
+            <ul class="Imgtext-lists">
+              <li  v-for='(item,index) in homeData.hotart' :key="item.artid" v-if="index<3">
+                <nuxt-link to class="title">
+                  <div class="img">
+                    <img :src="songsong+item.imgurl" alt>
+                  </div>
+                  <div class="title">博客开通了博客开通了</div>
+                </nuxt-link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -80,6 +66,13 @@
 <script>
 import articleList from "../components/articleList.vue";
 export default {
+  async asyncData({ app }) {
+    let homeData = await app.$axios.get("/api/home");
+    return{
+      homeData:homeData.data,
+      songsong:'https://songsongwei.top'
+    }
+  },
   components: {
     articleList
   },
@@ -90,7 +83,11 @@ export default {
   },
   mounted() {
     this.minHeight = window.screen.height;
-  }
+    console.log(this.homeData)
+  },
+  computed: {
+    
+  },
 };
 </script>
 
@@ -100,6 +97,16 @@ export default {
   background-attachment: fixed;
   background-position: 0 6rem;
   padding-top: 6rem;
+  &::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 28rem;
+    height: 18rem;
+    background: url("~assets/imgs/right-bg.png") no-repeat;
+    z-index: -1;
+  }
   .content-wrap {
     max-width: 1000px;
     margin: 0 auto;
