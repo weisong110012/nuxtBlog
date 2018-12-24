@@ -37,7 +37,7 @@
           <div class="tjwz">
             <h3 class="tjwz-title">推荐文章</h3>
             <ul class="text-lists">
-              <li  v-for='(item,index) in homeData.hotart' :key="item.artid">
+              <li v-for="(item,index) in homeData.hotart" :key="item.artid">
                 <span class="Num">{{index.toString()[1]?index.toString():0+(index+1).toString()}}</span>
                 <nuxt-link to class="title">{{item.title}}</nuxt-link>
               </li>
@@ -46,7 +46,7 @@
           <div class="twtj">
             <h3 class="twtj-title">图文推荐</h3>
             <ul class="Imgtext-lists">
-              <li  v-for='(item,index) in homeData.hotart' :key="item.artid" v-if="index<3">
+              <li v-for="(item,index) in homeData.hotart" :key="item.artid" v-if="index<3">
                 <nuxt-link to class="title">
                   <div class="img">
                     <img :src="songsong+item.imgurl" alt>
@@ -68,10 +68,10 @@ import articleList from "../components/articleList.vue";
 export default {
   async asyncData({ app }) {
     let homeData = await app.$axios.get("/api/home");
-    return{
-      homeData:homeData.data,
-      songsong:'https://songsongwei.top'
-    }
+    return {
+      homeData: homeData.data,
+      songsong: "https://songsongwei.top"
+    };
   },
   components: {
     articleList
@@ -83,11 +83,9 @@ export default {
   },
   mounted() {
     this.minHeight = window.screen.height;
-    console.log(this.homeData)
+    console.log(this.homeData);
   },
-  computed: {
-    
-  },
+  computed: {}
 };
 </script>
 
@@ -250,7 +248,7 @@ export default {
         }
         .twtj {
           width: 100%;
-          margin-top: 1rem;
+          margin: 1rem 0;
           .twtj-title {
             background: url("~assets/imgs/content/rtitbg.png") no-repeat;
             background-size: 100% 100%;
@@ -355,8 +353,30 @@ export default {
 
 @media screen and (max-width: 960px) {
   #main {
-    padding-top: 8rem;
+    padding-top: 6rem;
     background-position: 0 8rem;
+    background: none;
+    &::after {
+      background: none;
+    }
+    .content-wrap {
+      .person-wrap {
+        .person-des {
+          flex: 0 0 100%;
+        }
+        .person-card {
+          display: none;
+        }
+      }
+      .content {
+        .content-left {
+          flex: 0 0 100%;
+        }
+        .content-right {
+          flex: 0 0 100%;
+        }
+      }
+    }
   }
 }
 </style>
