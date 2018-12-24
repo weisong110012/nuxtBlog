@@ -71,6 +71,9 @@ header {
     left: 0;
     top: 0;
   }
+  .header-bar{
+    display: none;
+  }
   // 导航栏开始
   nav {
     display: flex;
@@ -137,21 +140,21 @@ header {
         &.liaotian::before {
           background: url("~assets/imgs/header/liaotianFont.png") no-repeat;
         }
-        &.index.nuxt-link-active::before {
+        &.index.nuxt-link-exact-active::before {
           background: url("~assets/imgs/header/indexFontActive.png") no-repeat;
         }
-        &.manshenghuo.nuxt-link-active::before {
+        &.manshenghuo.nuxt-link-exact-active::before {
           background: url("~assets/imgs/header/manshenghuoFontActive.png")
             no-repeat;
         }
-        &.jishu.nuxt-link-active::before {
+        &.jishu.nuxt-link-exact-active::before {
           background: url("~assets/imgs/header/jishuFontActive.png") no-repeat;
         }
-        &.liaotian.nuxt-link-active::before {
+        &.liaotian.nuxt-link-exact-active::before {
           background: url("~assets/imgs/header/liaotianFontActive.png")
             no-repeat;
         }
-        &.nuxt-link-active::after {
+        &.nuxt-link-exact-active::after {
           width: 100%;
           background: url("~assets/imgs/header/fontActiveBg.png") no-repeat;
         }
@@ -226,6 +229,7 @@ header {
       margin-left: -135px;
     }
     .header-bar {
+      display: block;
       position: absolute;
       left: 1rem;
       font-size: 2rem;
