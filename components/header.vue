@@ -13,7 +13,7 @@
           <nuxt-link to="/manshenghuo" class="manshenghuo">慢生活</nuxt-link>
         </div>
         <div class="item">
-          <nuxt-link to="/liaotian" class="liaotian">聊天室</nuxt-link>
+          <nuxt-link to="/chating" class="liaotian">聊天室</nuxt-link>
         </div>
       </nav>
     </transition>

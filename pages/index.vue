@@ -51,7 +51,7 @@
                   <div class="img">
                     <img :src="songsong+item.imgurl" alt>
                   </div>
-                  <div class="title">博客开通了博客开通了</div>
+                  <div class="title">{{item.title}}</div>
                 </nuxt-link>
               </li>
             </ul>
@@ -83,7 +83,6 @@ export default {
   },
   mounted() {
     this.minHeight = window.screen.height;
-    console.log(this.homeData);
   },
   computed: {}
 };
