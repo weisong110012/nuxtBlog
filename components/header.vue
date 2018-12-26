@@ -49,11 +49,16 @@ export default {
   beforeMount() {
     if (window.screen.width < 900) {
       this.navshow = false;
+      var _this = this;
+      document.body.addEventListener("touchstart", function() {});
     }
   },
   methods: {
     search() {
-      this.$router.push({name:'search-searchval',params:{searchval:this.searchVal}})
+      this.$router.push({
+        name: "search-searchval",
+        params: { searchval: this.searchVal }
+      });
     }
   }
 };
