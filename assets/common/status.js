@@ -13,4 +13,4 @@ var status={
     }
 }
 
-module.exports=status
+export default status

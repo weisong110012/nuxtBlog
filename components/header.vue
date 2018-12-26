@@ -17,13 +17,13 @@
         </div>
       </nav>
     </transition>
-    <transition name="fade">
+    <!-- <transition name="fade">
       <div class="login-wrap" v-show="navshow">
         <nuxt-link to="/login" class="login">登录</nuxt-link>
         <span>/</span>
         <nuxt-link to="/signup" class="signup">注册</nuxt-link>
       </div>
-    </transition>
+    </transition> -->
     <transition name="fade">
       <div class="search-wrap" v-show="navshow">
         <div>
