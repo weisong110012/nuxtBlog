@@ -23,12 +23,12 @@
         <span>/</span>
         <nuxt-link to="/signup" class="signup">注册</nuxt-link>
       </div>
-    </transition> -->
+    </transition>-->
     <transition name="fade">
       <div class="search-wrap" v-show="navshow">
         <div>
-          <input type="search" class="search-input">
-          <span class="fa fa-search"></span>
+          <input type="search" class="search-input" v-model="searchVal">
+          <span class="fa fa-search" @click="search"></span>
         </div>
       </div>
     </transition>
@@ -42,12 +42,18 @@ export default {
   name: "myheader",
   data() {
     return {
-      navshow: true
+      navshow: true,
+      searchVal: null
     };
   },
   beforeMount() {
     if (window.screen.width < 900) {
       this.navshow = false;
+    }
+  },
+  methods: {
+    search() {
+      this.$router.push({name:'search-searchval',params:{searchval:this.searchVal}})
     }
   }
 };
@@ -71,7 +77,7 @@ header {
     left: 0;
     top: 0;
   }
-  .header-bar{
+  .header-bar {
     display: none;
   }
   // 导航栏开始
