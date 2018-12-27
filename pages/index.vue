@@ -204,7 +204,6 @@ export default {
               bottom: 0;
               height: 44px;
               background: url("~assets/imgs/content/tjwz.png") no-repeat;
-              background-size: 100% 100%;
             }
           }
           .text-lists li {
@@ -262,7 +261,6 @@ export default {
               bottom: 0;
               height: 44px;
               background: url("~assets/imgs/content/twtj.png") no-repeat;
-              background-size: 100% 100%;
             }
           }
           .Imgtext-lists {
