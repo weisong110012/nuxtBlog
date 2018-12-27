@@ -49,7 +49,7 @@
               <li v-for="(item,index) in homeData.hotart" :key="item.artid" v-if="index<3">
                 <nuxt-link to class="title">
                   <div class="img">
-                    <img :src="songsong+item.imgurl" alt>
+                    <img v-lazy="songsong+item.imgurl" alt>
                   </div>
                   <div class="title">{{item.title}}</div>
                 </nuxt-link>
@@ -177,7 +177,6 @@ export default {
       margin: 0 auto;
       box-shadow: 0px 0px 2px #bdbdbd;
       background: rgb(229, 229, 229, 0.6);
-      animation: zhankai 2s;
       height: auto;
       overflow: hidden;
       display: flex;
@@ -341,14 +340,7 @@ export default {
     transform: translateY(0px);
   }
 }
-@keyframes zhankai {
-  0% {
-    height: 0;
-  }
-  100% {
-    height: 800px;
-  }
-}
+
 
 @media screen and (max-width: 960px) {
   #main {

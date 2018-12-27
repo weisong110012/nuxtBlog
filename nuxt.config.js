@@ -37,6 +37,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/vue-lazyload.js'
   ],
 
   /*
@@ -54,7 +55,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['axios'],
+    vendor: ['axios','~/plugins/vue-lazyload.js'],
     /*
     ** You can extend webpack config here
     */

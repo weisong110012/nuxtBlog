@@ -7,7 +7,7 @@
       <div class="info cf">
         <div class="info-img">
           <nuxt-link to="/">
-            <img :src="songsong+item.imgurl" alt>
+            <img v-lazy="songsong+item.imgurl" alt>
           </nuxt-link>
         </div>
         <div class="info-des">{{item.des}}</div>
