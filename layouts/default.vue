@@ -7,6 +7,9 @@
     <div class="yinghua0 yinghua"></div>
     <div class="yinghua1 yinghua"></div>
     <div class="yinghua2 yinghua"></div>
+    <div class="yinghua3 yinghua"></div>
+    <div class="yinghua4 yinghua"></div>
+    <div class="yinghua5 yinghua"></div>
   </div>
 </template>
 <script>
@@ -85,10 +88,19 @@ body {
  animation: piaoluo 20s linear infinite;
 }
 .yinghua1{
- animation: piaoluo1 30s linear 10s infinite;
+ animation: piaoluo1 30s linear  infinite;
 }
 .yinghua2{
- animation: piaoluo2 40s linear 30s infinite;
+ animation: piaoluo2 40s linear  infinite;
+}
+.yinghua3{
+ animation: piaoluo3 30s linear  infinite;
+}
+.yinghua4{
+ animation: piaoluo4 20s linear  infinite;
+}
+.yinghua5{
+ animation: piaoluo5 40s linear  infinite;
 }
 @keyframes piaoluo {
   0% {
@@ -122,6 +134,42 @@ body {
   }
   100% {
     left: 60%;
+    top: 100%;
+    transform: rotate(360deg);
+  }
+}
+@keyframes piaoluo3 {
+  0% {
+    left: 0;
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    left: 20%;
+    top: 100%;
+    transform: rotate(360deg);
+  }
+}
+@keyframes piaoluo4 {
+  0% {
+    left: 0;
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    left: 30%;
+    top: 100%;
+    transform: rotate(360deg);
+  }
+}
+@keyframes piaoluo5 {
+  0% {
+    left: 0;
+    top: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    left: 5%;
     top: 100%;
     transform: rotate(360deg);
   }
