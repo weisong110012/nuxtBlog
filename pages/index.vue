@@ -39,7 +39,7 @@
             <ul class="text-lists">
               <li v-for="(item,index) in homeData.hotart" :key="item.artid">
                 <span class="Num">{{index.toString()[1]?index.toString():0+(index+1).toString()}}</span>
-                <nuxt-link to class="title">{{item.title}}</nuxt-link>
+                <nuxt-link :to="{name:'article-artid',params:{artid:item.artid}}" class="title">{{item.title}}</nuxt-link>
               </li>
             </ul>
           </div>
@@ -47,7 +47,7 @@
             <h3 class="twtj-title">图文推荐</h3>
             <ul class="Imgtext-lists">
               <li v-for="(item,index) in homeData.hotart" :key="item.artid" v-if="index<3">
-                <nuxt-link to class="title">
+                <nuxt-link :to="{name:'article-artid',params:{artid:item.artid}}" class="title">
                   <div class="img">
                     <img v-lazy="songsong+item.imgurl" alt>
                   </div>

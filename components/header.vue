@@ -10,6 +10,9 @@
           <nuxt-link to="/jishu" class="jishu">技术研究</nuxt-link>
         </div>
         <div class="item">
+          <nuxt-link to="/love" class="love">爱的小屋</nuxt-link>
+        </div>
+        <div class="item">
           <nuxt-link to="/manshenghuo" class="manshenghuo">慢生活</nuxt-link>
         </div>
         <div class="item">
@@ -110,6 +113,9 @@ header {
       &:hover .liaotian::before {
         background: url("~assets/imgs/header/liaotianFontActive.png") no-repeat;
       }
+      &:hover .love::before {
+        background: url("~assets/imgs/header/loveActive.png") no-repeat;
+      }
       a {
         display: block;
         text-align: center;
@@ -151,6 +157,9 @@ header {
         &.liaotian::before {
           background: url("~assets/imgs/header/liaotianFont.png") no-repeat;
         }
+        &.love::before {
+          background: url("~assets/imgs/header/love.png") no-repeat;
+        }
         &.index.nuxt-link-exact-active::before {
           background: url("~assets/imgs/header/indexFontActive.png") no-repeat;
         }
@@ -163,6 +172,10 @@ header {
         }
         &.liaotian.nuxt-link-exact-active::before {
           background: url("~assets/imgs/header/liaotianFontActive.png")
+            no-repeat;
+        }
+        &.love.nuxt-link-exact-active::before {
+          background: url("~assets/imgs/header/loveActive.png")
             no-repeat;
         }
         &.nuxt-link-exact-active::after {
