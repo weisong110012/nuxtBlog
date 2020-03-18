@@ -497,6 +497,7 @@ export default {
             }
             li{
               float: left;
+              -webkit-box-reflect:below -88px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(60%, transparent) , to(rgba(0, 0, 0, .4)));
               &:nth-child(even) a {
               	-webkit-transform: rotate(8deg);
               	-moz-transform: rotate(8deg);
@@ -540,9 +541,9 @@ export default {
                 	-o-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
                 	-ms-box-shadow: 0 3px 6px rgba(0,0,0,0.25);
                    transform: scale(.8);
-                  &:after{
-                    content: attr(title);
-                  }
+                  // &:after{
+                  //   content: attr(title);
+                  // }
                   &:hover{
                      transform: scale(1);
                      -webkit-transform: scale(1);
