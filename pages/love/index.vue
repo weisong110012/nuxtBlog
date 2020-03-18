@@ -114,7 +114,8 @@ export default {
           text:'一起打桌球'
       },
       {
-          compute:false,
+          bg:'img/love/fangfengzheng.png',
+          compute:true,
           text:'一起放风筝'
       },
       {
